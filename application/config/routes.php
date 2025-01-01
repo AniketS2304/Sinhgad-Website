@@ -11,12 +11,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 
-$route['admin/login'] = 'admin/login';
-$route['admin/logout'] = 'admin/logout';
-$route['default_controller'] = 'admin/login';
+// $route['admin/login'] = 'admin/login';
+// $route['admin/logout'] = 'admin/logout';
+// $route['default_controller'] = 'admin/login';
 
 
 $route['admin/login'] = 'admin/login';
 $route['admin/login_process'] = 'admin/login_process';
 $route['admin/dashboard'] = 'admin/dashboard';
 $route['admin/logout'] = 'admin/logout';
+$route['dashboard'] = 'AdminDashboard/index';
+// application/config/routes.php
+
+$route['adminDashboard'] = 'AdminDashboard/index';

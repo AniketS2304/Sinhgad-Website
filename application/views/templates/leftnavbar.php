@@ -7,7 +7,7 @@
   .sidebar {
     position: absolute;
     left: 0;
-    width:250px;
+    width:25s0px;
     height: 100%;
     /* overflow-y:auto; */
     background-color: #fff;
@@ -169,12 +169,7 @@
 </div>
 </aside> -->
 
-<style>
-  
-  *{
-    z-index: -2;
-  }
-</style>
+
 
 <aside>
     <div class="sidebar">
