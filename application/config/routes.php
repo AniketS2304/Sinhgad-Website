@@ -10,17 +10,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $route['dashboard/manage_employees'] = 'dashboard/manage_employees';
 
 
+// $route['default_controller'] = 'admin/login'; // Default controller should be the login page.
+// $route['admin/login'] = 'admin/login'; // Route for login page.
+// $route['admin/login_process'] = 'admin/login_process'; // Route for processing login.
+// $route['admin/dashboard'] = 'admin/dashboard'; // Route to the admin dashboard.
+// $route['admin/logout'] = 'admin/logout'; // Route for logout.
 
-// $route['admin/login'] = 'admin/login';
-// $route['admin/logout'] = 'admin/logout';
-// $route['default_controller'] = 'admin/login';
-
-
-$route['admin/login'] = 'admin/login';
-$route['admin/login_process'] = 'admin/login_process';
-$route['admin/dashboard'] = 'admin/dashboard';
-$route['admin/logout'] = 'admin/logout';
-$route['dashboard'] = 'AdminDashboard/index';
-// application/config/routes.php
-
-$route['adminDashboard'] = 'AdminDashboard/index';
+// $route['dashboard'] = 'admin/dashboard'; // Redirect for dashboard.
+$route['default_controller'] = 'login';  // Default controller should load the login page
+$route['login'] = 'login';  // login page route
+$route['login/validate'] = 'login/validate';  // form submission for login
+$route['admin/dashboard'] = 'AdminDashboard/index';  // This route points to the AdminDashboard controller
+$route['login/logout'] = 'login/logout';  // logout route
