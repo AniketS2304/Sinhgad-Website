@@ -1,4 +1,4 @@
-<?php $this->load->view('./Templets/header.php'); ?>
+<?php $this->load->view('templates/header'); ?>
 
 <body>
     <h2>Admin Login</h2>
@@ -15,4 +15,4 @@
     </form>
 </body>
 
-<?php $this->load->view('Templets/footer'); ?>
+<?php $this->load->view('templates/footer'); ?>
