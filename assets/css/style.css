@@ -1,0 +1,122 @@
+/* Style for Login Page */
+.login-page {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+}
+
+.login-page h2 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.login-page form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-page label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.login-page input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.login-page button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.login-page button:hover {
+    background-color: #45a049;
+}
+
+
+
+/* left */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+.sidebar {
+    position: fixed; /* Fixed position for the sidebar */
+    left: 0;
+    top: 0;
+    width: 250px; /* Sidebar width */
+    height: 100%; /* Full height */
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+    /* z-index: 1000; Ensure sidebar is on top of content */
+    overflow-y: auto; /* Makes sidebar scrollable if it overflows */
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar li {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+    display: block;
+    padding: 5px 10px;
+}
+
+.sidebar .menu {
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.sidebar .menu .vertical-line {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: purple;
+}
+
+/* Content styling */
+.content {
+    margin-left: 260px; /* Adjust margin to avoid overlap with sidebar */
+    padding: 20px;
+    height: 100vh; /* Make sure content area takes full height */
+    overflow-y: auto; /* Enable vertical scroll if content overflows */
+}
+
+/* For mobile screens, adjust layout */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide the sidebar on small screens */
+    }
+    .content {
+        margin-left: 0; /* No left margin on small screens */
+        padding: 20px;
+    }
+}

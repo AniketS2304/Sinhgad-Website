@@ -1,5 +1,10 @@
   
   <style>
+
+/* *{
+  z-index: 9999;
+} */
+
     /**
 * Template Name: Yummy
 * Template URL: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/

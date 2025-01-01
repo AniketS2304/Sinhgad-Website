@@ -50,7 +50,7 @@
     font-size: 12px; 
   }
 </style> -->
-
+<!-- 
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -167,4 +167,60 @@
           </ul>
   </div>
 </div>
+</aside> -->
+
+<style>
+  
+  *{
+    z-index: -2;
+  }
+</style>
+
+<aside>
+    <div class="sidebar">
+        <a href="#"><strong>STES at A Glance</strong></a>
+        <div class="menu">
+            <div class="vertical-line"></div>
+            <ul>
+                <li><a href="#">4 Locations</a></li>
+                <li><a href="#">12 Campuses</a></li>
+                <li><a href="#">95000+ Students</a></li>
+                <li><a href="#">10+ Programs</a></li>
+            </ul>
+        </div>
+
+        <a href="#"><strong>Post Graduate & Under Graduate Programs</strong></a>
+        <div class="menu">
+            <div class="vertical-line"></div>
+            <ul>
+                <li><a href="#">Engineering</a></li>
+                <li><a href="#">Management</a></li>
+                <li><a href="#">Pharmacy</a></li>
+                <li><a href="#">Architecture</a></li>
+                <li><a href="#">Health Science</a></li>
+                <li><a href="#">Hotel Management</a></li>
+                <li><a href="#">Law</a></li>
+                <li><a href="#">Commerce & Science</a></li>
+                <li><a href="#">School</a></li>
+                <li><a href="#">Education</a></li>
+            </ul>
+        </div>
+
+        <a href="#"><strong>Apply for Admission</strong></a>
+        <div class="menu">
+            <div class="vertical-line"></div>
+            <ul>
+                <li><a href="#">Enquiry</a></li>
+                <li><a href="#">Generate UID</a></li>
+                <li><a href="#">Pay fee for Admission Brochure</a></li>
+                <li><a href="#">Download Admission Brochure</a></li>
+                <li><a href="#">Fill Admission Form</a></li>
+                <li><a href="#">Pay Fees For Admission Confirmation</a></li>
+                <li><a href="#">Download Admission Form</a></li>
+                <li><a href="#">Complete Document Verification at The Institute</a></li>
+                <li><a href="#">Fill Hostel Form</a></li>
+                <li><a href="#">Pay Hostel /Hostel & Mess Fees</a></li>
+            </ul>
+        </div>
+    </div>
 </aside>
