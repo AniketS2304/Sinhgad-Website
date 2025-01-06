@@ -1,14 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-</head>
-<body>
-    <h1>Welcome to the Admin Dashboard</h1>
-</body>
-</html> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -183,6 +172,7 @@
 
     <nav class="sidebar">
         <a href="#" class="nav-item">Dashboard</a>
+        <a href="#" class="nav-item">Add Reportig officer</a>
         <a href="#" class="nav-item">Reporting Officers</a>
         <a href="#" class="nav-item">Employees</a>
         <a href="#" class="nav-item">Performance Appraisals</a>
@@ -224,22 +214,7 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="footer-grid">
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>123 Admin Street<br>Suite 456<br>Business District, BZ 12345</p>
-            </div>
-            <div class="footer-section">
-                <h3>Support</h3>
-                <p>Phone: (555) 123-4567<br>Email: support@admin.com</p>
-            </div>
-            <div class="footer-section">
-                <h3>Legal</h3>
-                <p>Version 1.0.0<br>© 2024 Admin Dashboard. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 </body>
 </html>
+
 <?php $this->load->view('templates/footer'); ?>

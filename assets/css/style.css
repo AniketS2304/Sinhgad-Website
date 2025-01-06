@@ -6,6 +6,7 @@
     padding: 20px;
     background-color: #f4f4f4;
     border-radius: 8px;
+    color: black;
 }
 
 .login-page h2 {
@@ -17,6 +18,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    
 }
 
 .login-page label {

@@ -20,5 +20,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'login';  // Default controller should load the login page
 $route['login'] = 'login';  // login page route
 $route['login/validate'] = 'login/validate';  // form submission for login
-$route['admin/dashboard'] = 'AdminDashboard/index';  // This route points to the AdminDashboard controller
+$route['admin/dashboard'] = 'AdminDashboard/index';  // Dashboard page route
 $route['login/logout'] = 'login/logout';  // logout route
+
+
+//reporting 
+$route['reportingofficers/add'] = 'ReportingOfficers/add_officer';
+$route['reportingofficers/view/(:any)'] = 'ReportingOfficers/view_officer/$1';
+$route['reportingofficers/edit/(:any)'] = 'ReportingOfficers/update_officer/$1';
+$route['reportingofficers/delete/(:any)'] = 'ReportingOfficers/delete_officer/$1';
