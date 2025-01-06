@@ -1,5 +1,14 @@
 <?php
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Load .env file using Dotenv
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
+
 /**
+ * 
  * CodeIgniter
  *
  * An open source application development framework for PHP

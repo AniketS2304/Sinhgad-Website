@@ -139,3 +139,5 @@ $autoload['helper'] = array('url');
 
 
 $autoload['libraries'] = array('session', 'database', 'form_validation');
+// In application/config/autoload.php
+$autoload['libraries'] = array('database', 'session', 'email'); // Add 'email' here

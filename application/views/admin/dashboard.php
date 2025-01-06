@@ -159,20 +159,13 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="logo-section">
-            <img src="https://images.unsplash.com/photo-1557683316-973673baf926?w=128&h=128&fit=crop" alt="Logo" class="logo">
-            <h1>Admin Dashboard</h1>
-        </div>
-        <div class="user-section">
-            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&h=32&fit=crop" alt="User" class="user-avatar">
-            <span>John Doe</span>
-        </div>
-    </header>
 
     <nav class="sidebar">
         <a href="#" class="nav-item">Dashboard</a>
-        <a href="#" class="nav-item">Add Reportig officer</a>
+        <!-- <a href="#" class="nav-item">Add Reportig officer</a> -->
+        <!-- <a href="#add-reporting-officer" class="nav-item" id="addReportingOfficerLink">Add Reporting Officer</a> -->
+        <a href="<?= base_url('admin/add_reporting_officer_form'); ?>" class="nav-item">Add Reporting officer</a>
+
         <a href="#" class="nav-item">Reporting Officers</a>
         <a href="#" class="nav-item">Employees</a>
         <a href="#" class="nav-item">Performance Appraisals</a>

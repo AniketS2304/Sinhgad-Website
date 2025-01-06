@@ -40,6 +40,39 @@ class Admin extends CI_Controller {
         $this->load->view('admin/dashboard');
     }
 
+    public function add_reporting_officer_form() {
+        // Load the add_reporting_officer view to display the form
+        $this->load->view('admin/add_reporting_officer');
+    }
+    
+
+    public function add_reporting_officer() {
+        // Get data from the form
+        $empid = $this->input->post('empid');
+        $email = $this->input->post('email');
+        $mobile = $this->input->post('mobile');
+    
+        // Load the ReportingOfficers_model
+        $this->load->model('ReportingOfficers_model');
+    
+        // Add Reporting Officer using the model
+        $result = $this->ReportingOfficers_model->add_reporting_officer($empid, $email, $mobile);
+    
+        // Check if the officer was added successfully
+        if ($result['status']) {
+            // Return the raw password for communication (maybe for email or other purposes)
+            $this->session->set_flashdata('success', 'Reporting Officer added successfully. Password: ' . $result['password']);
+        } else {
+            // Handle error
+            $this->session->set_flashdata('error', 'Error: ' . $result['error']);
+        }
+    
+        // Redirect to dashboard or any other page
+        redirect('admin/dashboard');
+    }
+    
+
+
 
 
     public function logout() {
