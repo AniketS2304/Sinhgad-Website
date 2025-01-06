@@ -25,7 +25,8 @@ $route['login/logout'] = 'login/logout';  // logout route
 
 
 //reporting 
-$route['reportingofficers/add'] = 'ReportingOfficers/add_officer';
-$route['reportingofficers/view/(:any)'] = 'ReportingOfficers/view_officer/$1';
-$route['reportingofficers/edit/(:any)'] = 'ReportingOfficers/update_officer/$1';
-$route['reportingofficers/delete/(:any)'] = 'ReportingOfficers/delete_officer/$1';
+$route['admin/reporting_officer_list'] = 'admin/reporting_officers/list_all'; // Admin view all reporting officers
+$route['admin/reporting_officers/add'] = 'admin/reporting_officers/add_officer';  // Admin add reporting officer
+$route['admin/reporting_officers/view/(:any)'] = 'admin/reporting_officers/view_officer/$1'; // Admin view officer
+$route['admin/reporting_officers/edit/(:any)'] = 'admin/reporting_officers/update_officer/$1'; // Admin edit officer
+$route['admin/reporting_officers/delete/(:any)'] = 'admin/reporting_officers/delete_officer/$1'; // Admin delete officer

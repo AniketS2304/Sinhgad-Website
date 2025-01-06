@@ -162,11 +162,8 @@
 
     <nav class="sidebar">
         <a href="#" class="nav-item">Dashboard</a>
-        <!-- <a href="#" class="nav-item">Add Reportig officer</a> -->
-        <!-- <a href="#add-reporting-officer" class="nav-item" id="addReportingOfficerLink">Add Reporting Officer</a> -->
         <a href="<?= base_url('admin/add_reporting_officer_form'); ?>" class="nav-item">Add Reporting officer</a>
-
-        <a href="#" class="nav-item">Reporting Officers</a>
+        <a href="<?= base_url('admin/reporting_officer_list'); ?>" class="nav-item">Reporting Officers</a>
         <a href="#" class="nav-item">Employees</a>
         <a href="#" class="nav-item">Performance Appraisals</a>
         <a href="#" class="nav-item">Notifications</a>

@@ -9,11 +9,13 @@ class ReportingOfficers_model extends CI_Model {
     }
 
     // Insert Reporting Officer Data with Random Password
-    public function add_reporting_officer($empid, $email, $mobile) {
+// Insert Reporting Officer Data with Random Password
+public function add_reporting_officer($empid, $email, $mobile) {
+    try {
         // Generate a secure random password
         $raw_password = bin2hex(random_bytes(4)); // 8-character random password
         $hashed_password = password_hash($raw_password, PASSWORD_DEFAULT); // Hash the password
-        
+
         $data = array(
             'empid' => $empid,
             'email' => $email,
@@ -21,31 +23,40 @@ class ReportingOfficers_model extends CI_Model {
             'password' => $hashed_password,
             'created_at' => date('Y-m-d H:i:s')
         );
-        
+
         if ($this->db->insert('reporting_officers', $data)) {
             // Return the raw password for further communication
             return array('status' => true, 'password' => $raw_password);
         } else {
-            return array('status' => false, 'error' => $this->db->error());
+            throw new Exception("Failed to insert officer: " . $this->db->last_query());
         }
+    } catch (Exception $e) {
+        return array('status' => false, 'error' => $e->getMessage());
     }
-
-    // Fetch Reporting Officer by Employee ID
-    public function get_reporting_officer($empid) {
-        $query = $this->db->get_where('reporting_officers', array('empid' => $empid));
-        return $query->row_array();
-    }
+}
 
     // Update Reporting Officer Details
-    public function update_reporting_officer($empid, $email, $mobile) {
-        $data = array(
-            'email' => $email,
-            'mobile' => $mobile,
-            'updated_at' => date('Y-m-d H:i:s')
-        );
-        $this->db->where('empid', $empid);
-        return $this->db->update('reporting_officers', $data);
+// Update Reporting Officer Details
+public function update_reporting_officer($empid, $email, $mobile) {
+    // Validate inputs
+    if (empty($email) || empty($mobile)) {
+        return array('status' => false, 'error' => 'Email and Mobile cannot be empty');
     }
+
+    $data = array(
+        'email' => $email,
+        'mobile' => $mobile,
+        'updated_at' => date('Y-m-d H:i:s')
+    );
+
+    $this->db->where('empid', $empid);
+    if ($this->db->update('reporting_officers', $data)) {
+        return array('status' => true);
+    } else {
+        return array('status' => false, 'error' => $this->db->error());
+    }
+}
+
 
     // Delete Reporting Officer by Employee ID
     public function delete_reporting_officer($empid) {

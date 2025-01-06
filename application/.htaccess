@@ -4,3 +4,19 @@
 <IfModule !authz_core_module>
     Deny from all
 </IfModule>
+
+# Allow access to assets directory (CSS, JS, etc.)
+<Directory "C:/xampp/htdocs/appraisal_system/assets">
+    Require all granted
+</Directory>
+
+RewriteEngine On
+
+# If the request is for a non-existing file or directory, redirect to index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Redirect index.php to root (optional, depending on how your routing works)
+RewriteCond %{REQUEST_URI} ^/index.php/
+RewriteRule ^(.*)$ /$1 [R=301,L]

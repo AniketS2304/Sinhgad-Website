@@ -6,13 +6,13 @@ class ReportingOfficers extends CI_Controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('ReportingOfficers_model');  // Load the model
+        $this->load->library('email');  // Load the email library
     }
 
     // Add a new Reporting Officer
     public function add_officer() {
         // Load the view to show the form
         $this->load->view('admin/add_reporting_officer');
-        
     }
 
     // Process the form to add a new Reporting Officer
@@ -27,7 +27,11 @@ class ReportingOfficers extends CI_Controller {
 
         // Check the result and display a message
         if ($result['status']) {
-            $this->session->set_flashdata('success', 'Reporting Officer added successfully. Password: ' . $result['password']);
+            // Send email to the officer
+            $this->_send_email($email, $empid, $mobile);
+
+            // Success flash message with password hidden
+            $this->session->set_flashdata('success', 'Reporting Officer added successfully. Password has been sent to their email.');
         } else {
             $this->session->set_flashdata('error', 'Error: ' . $result['error']);
         }
@@ -36,40 +40,37 @@ class ReportingOfficers extends CI_Controller {
         redirect('admin/dashboard');
     }
 
+    // Send email to the Reporting Officer
+    private function _send_email($email, $empid, $mobile) {
+        // Configure email settings
+        $this->email->from('aniketsuryavanshi2304@gmail.com', 'Sinhgad Institute');
+        $this->email->to($email);
+        $this->email->subject('Welcome as a Reporting Officer');
+        
+        // Email message
+        $message = "
+            <p>Dear Reporting Officer,</p>
+            <p>Congratulations! You have been added as a Reporting Officer.</p>
+            <p>Your details are as follows:</p>
+            <ul>
+                <li>Employee ID: {$empid}</li>
+                <li>Email: {$email}</li>
+                <li>Mobile: {$mobile}</li>
+            </ul>
+            <p>Best regards,</p>
+            <p>Your Company</p>
+        ";
 
-        // Send email to the Reporting Officer
-        private function _send_email($email, $empid, $mobile) {
-            // Configure email settings
-            $this->email->from('aniketsuryavanshi2304@gmail.com', 'Sinhgad Institute');
-            $this->email->to($email);
-            $this->email->subject('Welcome as a Reporting Officer');
-            
-            // Email message
-            $message = "
-                <p>Dear Reporting Officer,</p>
-                <p>Congratulations! You have been added as a Reporting Officer.</p>
-                <p>Your details are as follows:</p>
-                <ul>
-                    <li>Employee ID: {$empid}</li>
-                    <li>Email: {$email}</li>
-                    <li>Mobile: {$mobile}</li>
-                </ul>
-                <p>Best regards,</p>
-                <p>Your Company</p>
-            ";
-    
-            // Send email
-            $this->email->message($message);
-    
-            // Check if email sent successfully
-            if ($this->email->send()) {
-                log_message('info', 'Email sent to Reporting Officer: ' . $email);
-            } else {
-                log_message('error', 'Failed to send email to Reporting Officer: ' . $email);
-            }
+        // Send email
+        $this->email->message($message);
+
+        // Check if email sent successfully
+        if ($this->email->send()) {
+            log_message('info', 'Email sent to Reporting Officer: ' . $email);
+        } else {
+            log_message('error', 'Failed to send email to Reporting Officer: ' . $email);
         }
-    
-
+    }
 
     // View a specific Reporting Officer by Employee ID
     public function view_officer($empid) {
@@ -136,5 +137,13 @@ class ReportingOfficers extends CI_Controller {
         // Redirect to the dashboard or another page
         redirect('admin/dashboard');
     }
+
+    public function list_all() {
+        // Fetch all reporting officers from the model
+        $data['officers'] = $this->ReportingOfficers_model->get_all_reporting_officers();
+    
+        // Load the view to display the list of officers
+        $this->load->view('admin/reporting_officer_list', $data);
+    }
+    
 }
-?>
