@@ -7,7 +7,20 @@
 </head>
 <body>
     <h1>Reporting Officers</h1>
-    <a href="<?php echo site_url('reporting_officer/create'); ?>">Add New Officer</a>
+
+    <!-- Flash messages for success or error -->
+    <?php if ($this->session->flashdata('success')): ?>
+        <p style="color: green;"><?php echo $this->session->flashdata('success'); ?></p>
+    <?php endif; ?>
+
+    <?php if ($this->session->flashdata('error')): ?>
+        <p style="color: red;"><?php echo $this->session->flashdata('error'); ?></p>
+    <?php endif; ?>
+
+    <!-- Add New Officer Link -->
+    <a href="<?php echo site_url('admin/reporting_officers/add'); ?>">Add New Officer</a>
+
+    <!-- Officers Table -->
     <table border="1">
         <thead>
             <tr>
@@ -24,8 +37,8 @@
                 <td><?php echo $officer->email; ?></td>
                 <td><?php echo $officer->mobile; ?></td>
                 <td>
-                    <a href="<?php echo site_url('reporting_officer/edit/'.$officer->empid); ?>">Edit</a>
-                    <a href="<?php echo site_url('reporting_officer/delete/'.$officer->empid); ?>" onclick="return confirm('Are you sure you want to delete?');">Delete</a>
+                    <a href="<?php echo site_url('admin/reporting_officers/edit/' . $officer->empid); ?>">Edit</a>
+                    <a href="<?php echo site_url('admin/reporting_officers/delete/' . $officer->empid); ?>" onclick="return confirm('Are you sure you want to delete this officer?');">Delete</a>
                 </td>
             </tr>
             <?php endforeach; ?>

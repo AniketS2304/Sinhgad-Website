@@ -24,9 +24,9 @@ $route['admin/dashboard'] = 'AdminDashboard/index';  // Dashboard page route
 $route['login/logout'] = 'login/logout';  // logout route
 
 
-//reporting 
-$route['admin/reporting_officer_list'] = 'admin/reporting_officers/list_all'; // Admin view all reporting officers
-$route['admin/reporting_officers/add'] = 'admin/reporting_officers/add_officer';  // Admin add reporting officer
-$route['admin/reporting_officers/view/(:any)'] = 'admin/reporting_officers/view_officer/$1'; // Admin view officer
-$route['admin/reporting_officers/edit/(:any)'] = 'admin/reporting_officers/update_officer/$1'; // Admin edit officer
-$route['admin/reporting_officers/delete/(:any)'] = 'admin/reporting_officers/delete_officer/$1'; // Admin delete officer
+// Reporting Officers Routes
+$route['admin/reporting_officer_list'] = 'AdminDashboard/list_all'; // Admin view all reporting officers
+$route['admin/reporting_officers/add'] = 'AdminDashboard/add_reporting_officer_form'; // Admin add reporting officer form
+$route['admin/reporting_officers/view/(:any)'] = 'AdminDashboard/view_officer/$1'; // Admin view officer
+$route['admin/reporting_officers/edit/(:any)'] = 'AdminDashboard/update_officer/$1'; // Admin edit officer
+$route['admin/reporting_officers/delete/(:any)'] = 'AdminDashboard/delete_officer/$1'; // Admin delete officer
