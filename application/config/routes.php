@@ -30,3 +30,13 @@ $route['admin/reporting_officers/add'] = 'AdminDashboard/add_reporting_officer_f
 $route['admin/reporting_officers/view/(:any)'] = 'AdminDashboard/view_officer/$1'; // Admin view officer
 $route['admin/reporting_officers/edit/(:any)'] = 'AdminDashboard/update_officer/$1'; // Admin edit officer
 $route['admin/reporting_officers/delete/(:any)'] = 'AdminDashboard/delete_officer/$1'; // Admin delete officer
+
+
+//reporting officers
+
+// Reporting Officer Routes
+// Reporting Officer Routes
+$route['reporting_officer/dashboard'] = 'ReportingOfficer/dashboard'; // Reporting Officer dashboard
+$route['reporting_officer/profile/(:any)'] = 'ReportingOfficer/profile/$1'; // View profile
+$route['reporting_officer/update/(:any)'] = 'ReportingOfficer/update/$1'; // Update profile
+$route['reporting_officer/change_password/(:any)'] = 'ReportingOfficer/change_password/$1'; // Change password

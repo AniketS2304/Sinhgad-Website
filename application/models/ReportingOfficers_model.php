@@ -82,5 +82,8 @@ class ReportingOfficers_model extends CI_Model {
         // Return the first matching officer
         return $query->row();
     }
+
+    
+    
 }
 ?>
