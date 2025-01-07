@@ -36,7 +36,9 @@ $route['admin/reporting_officers/delete/(:any)'] = 'AdminDashboard/delete_office
 
 // Reporting Officer Routes
 // Reporting Officer Routes
-$route['reporting_officer/dashboard'] = 'ReportingOfficer/dashboard'; // Reporting Officer dashboard
-$route['reporting_officer/profile/(:any)'] = 'ReportingOfficer/profile/$1'; // View profile
-$route['reporting_officer/update/(:any)'] = 'ReportingOfficer/update/$1'; // Update profile
-$route['reporting_officer/change_password/(:any)'] = 'ReportingOfficer/change_password/$1'; // Change password
+// $route['default_controller'] = 'ReportingOfficers/dashboard';
+
+$route['reporting_officer/dashboard'] = 'ReportingOfficers/dashboard';
+$route['reporting_officer/profile/(:num)'] = 'ReportingOfficers/profile/$1';
+$route['reporting_officer/update/(:num)'] = 'ReportingOfficers/update/$1';
+$route['reporting_officer/change_password/(:num)'] = 'ReportingOfficers/change_password/$1';

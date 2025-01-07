@@ -63,8 +63,7 @@ class ReportingOfficers_model extends CI_Model {
 
     // Method to get the total count of all officers
     public function get_count_all_officers() {
-        $query = $this->db->count_all('reporting_officers'); 
-        return $query;
+        return $this->db->count_all('reporting_officers'); 
     }
 
     // Method to get paginated officers
@@ -82,8 +81,5 @@ class ReportingOfficers_model extends CI_Model {
         // Return the first matching officer
         return $query->row();
     }
-
-    
-    
 }
 ?>

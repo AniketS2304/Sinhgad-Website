@@ -11,9 +11,8 @@ class ReportingOfficer extends CI_Controller {
 
     // Display the officer's dashboard
     public function dashboard() {
-        $empid = $this->session->userdata('empid');
-        $data['officer'] = $this->ReportingOfficers_model->get_officer_by_id($empid);
-        $this->load->view('reporting_officer/dashboard', $data); // Load dashboard view
+        // Your code to display dashboard
+        $this->load->view('reporting_officer/dashboard');
     }
 
     // Display the officer's profile
